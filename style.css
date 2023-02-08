@@ -5,7 +5,10 @@ body {
     padding: 0;
     appearance: none;
     font-family:Arial, Helvetica, sans-serif;
+    height: 100%;
 } 
+
+/*section classes*/
 
 .content {
     display: flex;
@@ -108,31 +111,45 @@ button {
     box-shadow: 5px 5px lightgray;
 }
 
-   /* 
-    
-    
-    
-    
-    .form-bottom {
-        display: flex;
-        flex-direction: column;
-        padding: 20px 0px 0px 20px;
-    
+@media only screen and (min-width: 800px) {
+    .content {
+        flex-direction: row;
     }
-    
-    button {
-        width: 200px;
-        height: 50px;
-        background-color: green;
+
+    .sidebar {
+        background-image: url("images/pexels-matheus-bertelli-799443.jpg");
         color: white;
-        font-size: 18px;
-        border-radius: 10px;
-        border: none;
-        margin-bottom: 20px;
-        box-shadow: 5px 5px lightgray;
+        height: 110vh;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 30%;
     }
-    
 
-*/
+    .logo {
+        margin-top: 80px;
+    }
 
+    .main {
+        padding: 150px 0px 0px 0px;
+        flex-grow: 1;
+    }
 
+    .speaker {
+        margin-bottom: 30px;
+    }
+
+    .inputs {
+        padding: 10px 20px 10px 20px;
+    }
+
+    .input-grid {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 2fr 2fr;
+        gap: 20px;
+    }
+
+    .form-bottom {
+        margin-top: 30px;
+    }
+} 
