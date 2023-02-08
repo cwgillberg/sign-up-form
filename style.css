@@ -1,0 +1,124 @@
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+    body {
+        margin: 0;
+        padding: 0;
+        appearance: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .content {
+        display: flex;
+        gap: 0px;
+    }
+    
+    /*sidebar*/
+    .sidebar {
+        background-image: url("images/pexels-matheus-bertelli-799443.jpg");
+        color: white;
+        height: 100vh;
+        width: 30%;
+        margin: 0px;
+    }
+    
+    .logo {
+        margin-top: 100px;
+        padding: 20px 0px 20px 0px;
+        text-align: center;
+        background-color: rgba(160, 160, 160, 0.2);
+    }
+    
+    
+    /*main*/
+    .main {
+       display: flex;
+       flex-direction: column;
+       flex: 1;
+       padding-top: 200px;
+       background-color: rgba(160, 160, 160, 0.2);
+    }
+    
+    .speaker {
+        margin: 20px 0px 50px 0px;
+        padding-left: 20px;
+        font-size: 25px;
+    }
+    
+    .inputs {
+        background-color: white;
+        box-shadow: 5px 5px lightgray;
+        max-width: 100%;
+        padding: 20px 10px 10px 30px;
+    }
+    
+    .input-grid {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 70%;
+    }
+    
+    .form-item {
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-item>label {
+        color: gray;
+    }
+    
+    input {
+        border-radius:2px;
+        border: 1px solid lightgray;
+        padding: 5px 5px 5px 5px;
+        outline: none;
+    }
+    
+    input:hover {
+        border-radius:2px;
+        border: 1px solid black;
+        padding: 5px 5px 5px 5px;
+    }
+    
+    input:focus:valid {
+        border-radius:2px;
+        border: 1px solid blue;
+        padding: 5px 5px 5px 5px;
+        box-shadow: 5px 5px lightgray;
+    
+    }
+
+    input:focus:invalid{
+        border-radius:2px;
+        border: 1px solid red;
+        padding: 5px 5px 5px 5px;
+        box-shadow: 5px 5px lightgray;
+    
+    }
+    
+    .form-bottom {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0px 0px 20px;
+    
+    }
+    
+    button {
+        width: 200px;
+        height: 50px;
+        background-color: green;
+        color: white;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 20px;
+        box-shadow: 5px 5px lightgray;
+    }
+    
+
+
+
+
