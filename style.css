@@ -139,7 +139,7 @@ button {
     }
 
     .inputs {
-        padding: 10px 20px 10px 20px;
+        padding: 10px 20px 50px 20px;
     }
 
     .input-grid {
@@ -149,7 +149,12 @@ button {
         gap: 20px;
     }
 
+   
+
     .form-bottom {
         margin-top: 30px;
     }
+
+
+
 } 

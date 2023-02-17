@@ -2,34 +2,27 @@ const password = document.querySelector(".password");
 const confirmPassword = document.querySelector(".confirm-password");
 const button = document.querySelector("button");
 const passwordField = document.querySelector("#pass-error");
-const confirmPassField = document.querySelector(".inputs");
+const inputGrid = document.querySelector(".inputs");
 
 confirmPassword.addEventListener("keyup", validatePassword);
 
 window.addEventListener("load", toggleButton("off"));
 
-/*
-VALIDATION PSEUDO CODE
-1. BUTTON IS DISABLED BY DEFAULT
-2. IF PASSWORDS MATCH -> ENABLE BUTTON
-3. IF PASSWORDS DO NOT MATCH -> DISPLAY ERROR
-4. WHEN PASSWORDS MATCH -> REMOVE ERROR, ENABLE BUTTON
-*/
-
-
 function validatePassword() {
-    if(password.value === confirmPassword.value) {
+    if(password.value === confirmPassword.value || confirmPassword.value === "") {
         toggleButton("on");
+        setError("off");
     } else {
-        setError();
+        setError("on");
     }
 }
 
 function toggleButton(state) {
     if(state === "on") {
-        button.disabled = "enabled"
+        button.disabled = false;
+        button.style.opacity = 1;
     } else {
-        button.disabled = "disabled"
+        button.disabled = true;
         button.style.opacity = 0.5;
     }
 }
@@ -42,12 +35,16 @@ function getError() {
     return errorBody;
 }
 
-function setError() {
-    if(confirmPassField.childElementCount === 2) {
-        confirmPassField.appendChild(getError());
+function setError(state) {
+    if(state === "on") {
+        if(inputGrid.childElementCount === 2) {
+            inputGrid.appendChild(getError());
+            inputGrid.style.padding = "10px 20px 10px 20px";
+        }
+    } else {
+        inputGrid.removeChild(inputGrid.lastChild);
+        inputGrid.style.padding = "10px 20px 50px 20px";
     }
+   
 }
 
-function updateGrid() {
-    
-}
