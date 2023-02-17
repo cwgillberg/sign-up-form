@@ -2,7 +2,7 @@ const password = document.querySelector(".password");
 const confirmPassword = document.querySelector(".confirm-password");
 const button = document.querySelector("button");
 const passwordField = document.querySelector("#pass-error");
-const confirmPassField = document.querySelector("#confirm-error");
+const confirmPassField = document.querySelector(".inputs");
 
 confirmPassword.addEventListener("keyup", validatePassword);
 
@@ -21,7 +21,7 @@ function validatePassword() {
     if(password.value === confirmPassword.value) {
         toggleButton("on");
     } else {
-        getError();
+        setError();
     }
 }
 
@@ -34,10 +34,20 @@ function toggleButton(state) {
     }
 }
 
-
 function getError() {
     let errorBody = document.createElement("p");
     let errorText = document.createTextNode("Sorry! These passwords don't match");
-    errorBody.appendChild(errorText);
-    confirmPassField.appendChild(errorBody);
+    errorBody.style.textAlign= "center";
+    errorBody.appendChild(errorText);   
+    return errorBody;
+}
+
+function setError() {
+    if(confirmPassField.childElementCount === 2) {
+        confirmPassField.appendChild(getError());
+    }
+}
+
+function updateGrid() {
+    
 }
