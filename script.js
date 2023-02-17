@@ -6,24 +6,12 @@ const inputGrid = document.querySelector(".inputs");
 
 confirmPassword.addEventListener("keyup", validatePassword);
 
-window.addEventListener("load", toggleButton("off"));
 
 function validatePassword() {
     if(password.value === confirmPassword.value || confirmPassword.value === "") {
-        toggleButton("on");
         setError("off");
     } else {
         setError("on");
-    }
-}
-
-function toggleButton(state) {
-    if(state === "on") {
-        button.disabled = false;
-        button.style.opacity = 1;
-    } else {
-        button.disabled = true;
-        button.style.opacity = 0.5;
     }
 }
 
@@ -40,9 +28,13 @@ function setError(state) {
         if(inputGrid.childElementCount === 2) {
             inputGrid.appendChild(getError());
             inputGrid.style.padding = "10px 20px 10px 20px";
+            confirmPassword.style.border = "2px solid red";
+            password.style.border = "2px solid red";
         }
     } else {
         inputGrid.removeChild(inputGrid.lastChild);
+        confirmPassword.style.border = "2px solid lightgray";
+        password.style.border = "2px solid lightgray";
         inputGrid.style.padding = "10px 20px 50px 20px";
     }
    
